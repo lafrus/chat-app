@@ -1,0 +1,80 @@
+/* ChatList.css */
+
+.chatList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    max-height: 90vh; /* Example height, adjust to fit your layout */
+    background-color: #ffffff;
+    border-right: 1px solid #ddd; /* Separator line */
+  }
+  
+  .chatList li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0; /* Light line for each list item */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .chatList li:hover {
+    background-color: #f5f5f5; /* Hover effect color */
+  }
+  
+  .chatList li.active {
+    background-color: #e9ecef; /* Active item color */
+  }
+  
+  .chatList li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+  }
+  
+  .chatList .roomInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .chatList .roomName {
+    font-weight: bold;
+  }
+  
+  .chatList .lastMessage {
+    color: #666666;
+    font-size: 0.8rem; /* Smaller font for subtext */
+  }
+  
+  .chatList .unreadCount {
+    display: inline-block;
+    margin-left: 10px; /* Spacing */
+    background-color: #007bff;
+    height: 20px;
+    min-width: 20px;
+    padding: 0 6px;
+    text-align: center;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 0.75rem; /* Smaller font for unread count */
+    line-height: 20px;
+  }
+  
+  /* Responsive design considerations */
+  @media (max-width: 768px) {
+    .chatList li {
+      padding: 10px;
+    }
+  
+    .chatList .roomInfo {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .chatList .roomName {
+      margin-bottom: 5px;
+    }
+  
+    .chatList .unreadCount {
+      margin-left: 0;
+    }
+  }
+  

@@ -1,0 +1,95 @@
+/* ChatRoom.css */
+.chatRoom {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 16px;
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chatRoom-header {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .chatRoom-body {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+  .message {
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    max-width: 80%;
+  }
+  
+  .message-sent {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+  }
+  
+  .message-received {
+    align-self: flex-start;
+  }
+  
+  .message-content {
+    word-wrap: break-word;
+  }
+  
+  .chatRoom-footer {
+    display: flex;
+    padding-top: 16px;
+  }
+  
+  .inputMessage {
+    flex-grow: 1;
+    margin-right: 8px;
+    padding: 8px;
+    border: none;
+    border-radius: 18px;
+    outline: none;
+  }
+  
+  .sendButton {
+    padding: 8px 16px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 18px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .sendButton:hover {
+    background-color: #0069d9;
+  }
+  
+  .sendButton:active {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive design for mobile devices */
+  @media (max-width: 600px) {
+    .chatRoom {
+      padding: 12px;
+    }
+    
+    .message {
+      margin-bottom: 8px;
+    }
+  
+    .inputMessage {
+      padding: 6px;
+    }
+  
+    .sendButton {
+      padding: 6px 12px;
+    }
+  }

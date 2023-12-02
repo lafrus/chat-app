@@ -35,3 +35,33 @@ mongoose.connection.on('error', (err) => {
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+import React, { useState } from 'react';
+import socket from '../socket';
+
+const MessageForm = ({ room }) => {
+  const [message, setMessage] = useState('');
+
+  const sendMessage = (e) => {
+    e.preventDefault();
+    if (message) {
+      socket.emit('chatMessage', { content: message, room });
+      setMessage('');
+    }
+  };
+
+  return (
+    <form onSubmit={sendMessage}>
+      <input
+        type="text"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        placeholder="Type a message..."
+        required
+      />
+      <button type="submit">Send</button>
+    </form>
+  );
+};
+
+export default MessageForm;
